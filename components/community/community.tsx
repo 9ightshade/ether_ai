@@ -1,41 +1,113 @@
+"use client";
+import Image from "next/image";
 export default function CommunityMetrics() {
   const metrics = [
     {
       title: "ACTIVE ACCOUNTS",
       metric: "10.2M+",
+      gradient: "from-[#6843EC] to-[#D2FF3A]",
     },
     {
       title: "PROJECTS",
       metric: "300+",
+      gradient: "from-[#6843EC] to-[#D2FF3A]",
     },
     {
       title: "TOPICS",
       metric: "1000+",
+      gradient: "from-[#6843EC] to-[#D2FF3A]",
     },
   ];
 
   return (
-    <div className="flex items-start justify-evenly gap-3 "
-    style={{
+    <div
+      className=" w-full bg-black text-white py-11  "
+      style={{
         backgroundImage: "url('/communitybg.png')",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-      }}
-    >
-      <h2 className="text-6xl">
-        Join a community <span className="block">of millions.</span>
-      </h2>
-      <div>
-        {metrics.map((metric) => (
-          <div key={metric.title}>
-            <h2 className="bg-gradient-to-r from-[#6843EC] to-[#D2FF3A] bg-clip-text text-transparent text-9xl font-semibold">
-              {metric.metric}
-            </h2>
-            <p className="text-[#C4C4C4] text-2xl font-normal">
-              {metric.title}
-            </p>
+        backgroundSize: "cover",
+      }}>
+      <section className="features flex flex-col md:flex-row justify-center gap-6 max-w-7xl mx-auto px-4 py-12">
+        {/* First Card */}
+        <div className="w-full md:w-1/2 p-8 md:p-10 bg-[#1A1A1A] space-y-4 rounded-2xl border border-[#333333]">
+          <h2 className="font-normal text-2xl md:text-3xl lg:text-4xl text-white">
+            Automated Image Synthesis and Design
+          </h2>
+          <p className="text-lg md:text-xl text-[#C4C4C4] my-6">
+            With AI-powered image generation, designers and creatives can
+            streamline their workflows and unlock new levels of efficiency.
+          </p>
+          <div className="flex items-center gap-3 flex-wrap">
+            <button className="border border-[#444] rounded-full flex cursor-pointer items-center gap-2 py-3 px-6 text-sm transition-colors hover:border-[#A694FF] hover:text-[#A694FF]">
+              YOUTUBE
+              <div className="h-5 w-5 flex items-center justify-center">
+                <Image
+                  src="/youtube.png"
+                  alt="YouTube icon"
+                  width={20}
+                  height={14}
+                />
+              </div>
+            </button>
+            <button className="border border-[#444] rounded-full flex items-center cursor-pointer gap-2 py-3 px-6 text-sm transition-colors hover:border-[#A694FF] hover:text-[#A694FF]">
+              PODCAST
+              <div className="bg-gradient-to-b from-[#F452FF] to-[#832BC1] h-5 w-5 rounded flex items-center justify-center">
+                <Image
+                  src="/podcast.png"
+                  alt="Podcast icon"
+                  width={14}
+                  height={14}
+                />
+              </div>
+            </button>
           </div>
-        ))}
+        </div>
+
+        {/* Second Card */}
+        <div className="w-full md:w-1/2 p-8 md:p-10 bg-[#1A1A1A] space-y-4 rounded-2xl border border-[#333333]">
+          <h2 className="font-normal text-2xl md:text-3xl lg:text-4xl text-white">
+            Create stunning visual in seconds
+          </h2>
+          <p className="text-lg md:text-xl text-[#C4C4C4] my-6">
+            Generating innovative ideas is a crucial aspect of any creative
+            endeavor. AI tools can help spark inspiration by analyzing vast
+            amounts of data.
+          </p>
+          <div className="flex items-center mt-6 bg-[#0A0A0A] rounded-full py-2 px-4">
+            <input
+              type="text"
+              placeholder="Write Prompt To Generate Image"
+              className="bg-transparent text-[#848895] outline-none flex-grow px-2 py-2 text-sm"
+            />
+            <button className="text-black font-medium text-sm py-2 cursor-pointer px-5 bg-[#B3D73B] rounded-full transition-transform hover:scale-105">
+              Generate
+            </button>
+          </div>
+        </div>
+      </section>
+      <div className="w-[80%] mx-auto flex items-start justify-between py-7 ">
+        <div className="">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light">
+            Join a community
+            <br />
+            of millions.
+          </h2>
+        </div>
+
+        <div className=" flex flex-col space-y-12">
+          {metrics.map((metric) => (
+            <div key={metric.title} className="flex flex-col">
+              <h2
+                className={`bg-gradient-to-r ${metric.gradient} bg-clip-text text-transparent text-6xl md:text-7xl lg:text-9xl font-medium`}>
+                {metric.metric}
+              </h2>
+              <p className="text-gray-400 text-sm md:text-base lg:text-xl uppercase mt-1">
+                {metric.title}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
