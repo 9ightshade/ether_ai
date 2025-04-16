@@ -34,7 +34,7 @@ export default function RootLayout({
           backgroundRepeat: "no-repeat",
           backgroundPositionY: "top",
         }}>
-          <Navbar/>
+        <Navbar />
         {children}
         <Footer />
       </body>
