@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Darker_Grotesque, Turret_Road } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer/footer";
+import Navbar from "@/components/nav/navbar";
 
 const turretRoad = Turret_Road({
   variable: "--font-turret_road",
@@ -33,6 +34,7 @@ export default function RootLayout({
           backgroundRepeat: "no-repeat",
           backgroundPositionY: "top",
         }}>
+          <Navbar/>
         {children}
         <Footer />
       </body>
