@@ -87,7 +87,7 @@ export default function GridCarousel() {
   );
 
   return (
-    <div className="flex flex-col gap-4 w-full bg-black text-white overflow-hidden">
+    <div className="flex flex-col gap-4 w-full bg-black text-white overflow-hidden py-36 ">
       {/* Header */}
       <div className="py-6 px-27">
         <h1 className="text-3xl font-bold">Journey Through Art of community</h1>

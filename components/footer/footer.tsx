@@ -30,7 +30,7 @@ export default function Footer() {
               ].map((Icon, index) => (
                 <div key={index}>
                   <a key={index} href="#" className="">
-                    <Icon className="h-5 w-5 text-white" />
+                    <Icon className="h-5 w-5 text-white hover:scale-125 transition duration-100" />
                   </a>
                 </div>
               ))}

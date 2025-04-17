@@ -4,7 +4,7 @@ import HeroSection from "@/components/hero/hero";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <HeroSection />
       <CommunityMetrics />
       <GridCarousel />
